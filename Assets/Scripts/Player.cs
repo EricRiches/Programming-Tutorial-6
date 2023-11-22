@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
 
     public enum EActivePowerUp
     {
-        None,
-        Speed,
-        Damage,
-        InfiniteAmmo
+
+        Speed = 1,
+        Damage = 2,
+        InfiniteAmmo = 4
     }
 
     [SerializeField] private WeaponBase myWeapon1;
@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
     public void SwitchPowerUp(EActivePowerUp powerUp)
     {
         
-        PowerUp = powerUp;
+        PowerUp = (EActivePowerUp)((int)PowerUp + (int)powerUp);
         
     }
 
